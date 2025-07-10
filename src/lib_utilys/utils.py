@@ -20,10 +20,10 @@ def read_json(path: Path) -> dict:
         logger.exception("Failed to read JSON file at %s", path)
         return {}
 
-    def write_json(path: Path, data: dict):
-        """Writes data to a JSON file."""
-        try:
-            with open(path, 'w') as file:
-                json.dump(data, file, indent=4)
-        except Exception as e:
-            logger.exception("Error writing JSON file at %s", path)
+def write_json(path: Path, data: dict):
+    """Writes data to a JSON file."""
+    try:
+        with open(path, 'w') as file:
+            json.dump(data, file, indent=4)
+    except Exception as e:
+        logger.exception("Error writing JSON file at %s", path)
